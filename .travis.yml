@@ -1,2 +1,11 @@
-language: ruby
-script: ./scripts/check-patch-files.sh recipes-ros
+language: c++
+compiler: gcc
+install: true
+cache: false
+branches:
+  only:
+    - travisci
+script:
+  - du -h $HOME | grep '^[0-9\.]\+G' || true
+  - df -h .
+  - $(pwd)/scripts/travis-setup.sh $(pwd)
