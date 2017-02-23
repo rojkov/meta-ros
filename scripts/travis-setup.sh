@@ -2,7 +2,7 @@
 
 set -ex
 
-SRC_DIR=${1-$(pwd)}
+SRC_DIR=`realpath ${1-$(pwd)}`
 echo "SRC_DIR is $SRC_DIR; pwd is $(pwd)"
 ls -l
 
@@ -15,10 +15,22 @@ git clone --depth=1 --single-branch --branch=master git://git.openembedded.org/m
 
 . openembedded-core/oe-init-build-env $SRC_DIR/build
 
+bitbake-layers add-layer $SRC_DIR/meta-ros
+bitbake-layers add-layer $SRC_DIR/meta-metaopenebedded/meta-oe
+bitbake-layers add-layer $SRC_DIR/meta-metaopenebedded/meta-python
+bitbake-layers add-layer $SRC_DIR/meta-metaopenebedded/meta-multimedia
+
+cat >>conf/local.conf <<EOF
+DISTRO_FEATURES_append = " opengl"
+LICENSE_FLAGS_WHITELIST = "commercial"
+EOF
+
 ls -l
 
 pwd
 cat conf/local.conf
 cat conf/bblayers.conf
 
-
+df -h .
+bitbake packagegroup-ros-world
+df -h .
