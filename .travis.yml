@@ -13,4 +13,4 @@ branches:
 script:
   - du -h $HOME | grep '^[0-9\.]\+G' || true
   - df -h .
-  - $(pwd)/scripts/travis-setup.sh $(pwd)
+  - $(pwd)/scripts/travis-setup.sh $(pwd)/..
