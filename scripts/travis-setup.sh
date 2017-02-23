@@ -2,7 +2,7 @@
 
 set -ex
 
-SRC_DIR=`realpath ${1-$(pwd)}`
+SRC_DIR=${1-$(pwd)}
 echo "SRC_DIR is $SRC_DIR; pwd is $(pwd)"
 ls -l
 
