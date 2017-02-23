@@ -17,9 +17,9 @@ git clone --depth=1 --single-branch --branch=master git://git.openembedded.org/m
 . openembedded-core/oe-init-build-env $SRC_DIR/build
 
 bitbake-layers add-layer $SRC_DIR/meta-ros
-bitbake-layers add-layer $SRC_DIR/meta-metaopenebedded/meta-oe
-bitbake-layers add-layer $SRC_DIR/meta-metaopenebedded/meta-python
-bitbake-layers add-layer $SRC_DIR/meta-metaopenebedded/meta-multimedia
+bitbake-layers add-layer $SRC_DIR/meta-metaopenembedded/meta-oe
+bitbake-layers add-layer $SRC_DIR/meta-metaopenembedded/meta-python
+bitbake-layers add-layer $SRC_DIR/meta-metaopenembedded/meta-multimedia
 
 cat >>conf/local.conf <<EOF
 DISTRO_FEATURES_append = " opengl"
