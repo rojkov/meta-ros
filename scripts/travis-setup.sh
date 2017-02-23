@@ -33,5 +33,5 @@ cat conf/local.conf
 cat conf/bblayers.conf
 
 df -h .
-bitbake packagegroup-ros-world
+$SRC_DIR/meta-ros/scripts/travis-cmd-wrapper.py bitbake packagegroup-ros-world
 df -h .
