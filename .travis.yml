@@ -7,6 +7,9 @@ addons:
   apt:
     packages:
       - python3.4
+      - diffstat
+      - texinfo
+      - chrpath
 branches:
   only:
     - travisci
