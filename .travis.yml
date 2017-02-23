@@ -1,7 +1,12 @@
 language: c++
 compiler: gcc
+dist: trusty
 install: true
 cache: false
+addons:
+  apt:
+    packages:
+      - python3.4
 branches:
   only:
     - travisci
