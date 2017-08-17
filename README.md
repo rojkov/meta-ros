@@ -2,7 +2,7 @@ This is a layer to provide ROS Indigo Igloo in an OpenEmbedded Linux system.
 It provides a stable cross-compilation build system for many common ROS packages. 
 Currently, this layer is still under continuous development.
 
-## IMPORTANT RESOURCES ##
+## IMPORTANT RESOURCES ## 
 
   * Source Code Repository: https://github.com/bmwcarit/meta-ros.git
   * Issue Tracker: https://github.com/bmwcarit/meta-ros/issues
